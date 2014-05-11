@@ -106,9 +106,9 @@ Read more about MIDI to understand about the MIDI input packet.
 Some devices has commands, for example, my Launchpad has whole document about programming the device. To fill one button with color there's the command for it.
 To send the command, you have to prepare an array of unsigned int that wrapped into a NSNumber, like that:
 
-``NSArray *command = [NSArray arrayWithObjects:[NSNumber numberWithUnsignedInt:0xB0], [NSNumber numberWithUnsignedInt:0x00], [NSNumber numberWithUnsignedInt:0x7F],nil];
+	NSArray *command = [NSArray arrayWithObjects:[NSNumber numberWithUnsignedInt:0xB0], [NSNumber numberWithUnsignedInt:0x00], [NSNumber numberWithUnsignedInt:0x7F],nil];
 
-[midi sendData: command withDevice: launchpad];``
+	[midi sendData: command withDevice: launchpad];
 
 This code would send my launchpad a command that would light up all the buttons on its grid.
 For more information about the launchpad's commands click [here](http://d19ulaff0trnck.cloudfront.net/sites/default/files/novation/downloads/4700/launchpad-s-prm.pdf "Launchpad Programming Guide").
