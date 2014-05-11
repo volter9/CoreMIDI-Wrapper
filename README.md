@@ -86,9 +86,9 @@ To receive input commands from MIDI device you need first add to your interface 
 
 	- (void)receiveMIDIInput: (NSArray *)packet;``
 
-	Then add the method to implementation:
+Then add the method to implementation:
 
-	``@implementation YourAwesomeClass
+	@implementation YourAwesomeClass
 
 	- (void)receiveMIDIInput: (NSArray *)packet {
 		NSLog(@"%@", packet);
