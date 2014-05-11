@@ -75,24 +75,24 @@ This will connect you MIDI device to the input port and you could get input.
 
 To receive input commands from MIDI device you need first add to your interface MIDIReceiver and add method receiveMIDIInput:
 
-``// ... Some code above
-#import "MIDIReceiver.h"
+	// ... Some code above
+	#import "MIDIReceiver.h"
 
-@interface YourAwesomeClass : NSObject <MIDIReceiver> {
-// ...
-}
+	@interface YourAwesomeClass : NSObject <MIDIReceiver> {
+	// ...
+	}
 
-// ...
+	// ...
 
-- (void)receiveMIDIInput: (NSArray *)packet;``
+	- (void)receiveMIDIInput: (NSArray *)packet;``
 
-Then add the method to implementation:
+	Then add the method to implementation:
 
-``@implementation YourAwesomeClass
+	``@implementation YourAwesomeClass
 
-- (void)receiveMIDIInput: (NSArray *)packet {
-	NSLog(@"%@", packet);
-}``
+	- (void)receiveMIDIInput: (NSArray *)packet {
+		NSLog(@"%@", packet);
+	}
 
 And finally set the receiver to your self object where you've written the rest of code with MIDIWrapper:
 
@@ -125,13 +125,13 @@ This will log the status, 1 is online, 0 is offline, just like boolean converted
 
 To track the changes in MIDI system, if you already set the receiver, then you can add another method from MIDIReceiver's protocol receiveMIDINotification: withNotification:, like that:
 
-``// Implementation
+	// Implementation
 
-- (void)receiveMIDINotification: (NSString *)message withNotification: (const MIDINotification *)notification {
-	NSLog(@"%@", message);
-}
+	- (void)receiveMIDINotification: (NSString *)message withNotification: (const MIDINotification *)notification {
+		NSLog(@"%@", message);
+	}
 
-// More code``
+	// More code
 
 This will display message in log (the bottom part of the XCode). You can retrieve more information using notification argument, for more information about MIDINotification look up the [reference](https://developer.apple.com/library/mac/documentation/MusicAudio/Reference/CACoreMIDIRef/MIDIServices/index.html "MIDINotification").
 Search for MIDINotification in Structs & Unions.
